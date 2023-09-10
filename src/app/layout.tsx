@@ -5,6 +5,9 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 const inter = Inter({ subsets: ['latin'] })
 
+// Vercel
+import { Analytics } from '@vercel/analytics/react'
+
 // Styles
 import '@/styles/main.scss'
 
@@ -26,6 +29,7 @@ export default function RootLayout({
 			<body className={inter.className}>
 				<Navigation />
 				{children}
+				<Analytics />
 			</body>
 		</html>
 	)
