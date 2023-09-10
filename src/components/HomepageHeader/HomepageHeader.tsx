@@ -1,6 +1,6 @@
 const HomepageHeader = () => {
 	return (
-		<div className='py-10 md:py-40'>
+		<div className='py-10 md:py-28'>
 			<div className='container'>
 				<div className='md:w-4/5'>
 					<p className='font-semibold text-2xl mb-4'>Hello! I'm Brandon. 👋🏼</p>
