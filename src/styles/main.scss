@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './elements.scss';
+
+* {
+	@apply text-zinc-900;
+}
+
+.border {
+	@apply border-zinc-900;
+}
