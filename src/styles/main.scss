@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @import './elements.scss';
+@import './typography.scss';
 
 * {
 	@apply text-zinc-900;

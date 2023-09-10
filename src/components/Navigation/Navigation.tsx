@@ -1,13 +1,24 @@
+// Next
+import Image from 'next/image'
+import Link from 'next/link'
+
+// Assets
+import Logo from '@/assets/brand/Logo_Text_Dark.svg'
+
 const Navigation = () => {
 	return (
 		<div className='py-2'>
 			<div className='container'>
 				<div className='flex items-center justify-between'>
-					<div className='h-10 w-40 bg-zinc-100 rounded'></div>
+					<Link href='/'>
+						<Image
+							src={Logo}
+							alt='brandonrbridges.com logo'
+							className='h-10 w-20'
+						/>
+					</Link>
 					<div>
-						<button className='border hover:bg-zinc-900 hover:text-white px-4 py-1 rounded-full'>
-							Let's talk
-						</button>
+						<button>Let's talk</button>
 					</div>
 				</div>
 			</div>

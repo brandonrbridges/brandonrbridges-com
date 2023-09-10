@@ -1,4 +1,23 @@
 button {
-	@apply cursor-pointer;
-	@apply transition-colors;
+	@apply cursor-pointer transition-colors;
+	@apply border rounded-full;
+	@apply px-4 py-1;
+	@apply font-medium;
+	@apply flex items-center;
+
+	&:hover {
+		@apply bg-zinc-900 text-white;
+	}
+
+	&.lg {
+		@apply text-lg px-6;
+	}
+}
+
+.container {
+	@apply px-4 lg:px-0;
+}
+
+ul {
+	@apply space-y-0.5;
 }
