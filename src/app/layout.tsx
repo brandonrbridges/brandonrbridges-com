@@ -29,12 +29,6 @@ export const metadata: Metadata = {
 		siteName: "Brandon Bridges' Portfolio",
 		images: [
 			{
-				url: 'https://brandonrbridges.com/og_800x600.png',
-				width: 800,
-				height: 600,
-				alt: "Brandon Bridges' Portfolio - 800x600",
-			},
-			{
 				url: 'https://brandonrbridges.com/og_1800x1600.png',
 				width: 1800,
 				height: 1600,
