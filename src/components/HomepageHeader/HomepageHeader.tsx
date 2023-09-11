@@ -1,9 +1,10 @@
 // Components
 import SocialProfiles from '@/components/SocialProfiles'
+import Link from 'next/link'
 
 const HomepageHeader = () => {
 	return (
-		<div className='py-10 md:py-28'>
+		<div className='py-10 md:py-20'>
 			<div className='container'>
 				<div className='md:w-4/5'>
 					<p className='mb-4 text-xl font-semibold md:text-2xl'>
@@ -25,7 +26,15 @@ const HomepageHeader = () => {
 						digital products that are accessible and inclusive.
 					</p>
 
-					<SocialProfiles />
+					<SocialProfiles className='my-10' />
+
+					<p>
+						Say{' '}
+						<Link href='mailto:hello@brandonrbridges.com'>
+							<span className='font-semibold text-pink-500'>hello</span>
+							@brandonrbridges.com
+						</Link>
+					</p>
 				</div>
 			</div>
 		</div>

@@ -2,6 +2,7 @@
 import HomepageHeader from '@/components/HomepageHeader'
 import ProjectGrid from '@/components/ProjectGrid'
 import Reviews from '@/components/Reviews'
+import TrustPilotReviewBadge from '@/components/TrustPilotReviewBadge'
 import { IconGridPattern, IconStarFilled } from '@tabler/icons-react'
 
 export default function Home() {
@@ -55,13 +56,20 @@ export default function Home() {
 			<div className='py-20 bg-zinc-100 dark:bg-zinc-800'>
 				<div className='container'>
 					<div className='mb-8'>
-						<h3 className='mb-2 text-4xl font-bold'>
-							Don't just take it from me, though
-						</h3>
-						<p className='text-lg'>
-							Here's what some of my past clients have to say about working with
-							me.
-						</p>
+						<div className='grid grid-cols-1 gap-8 md:grid-cols-2'>
+							<div>
+								<h3 className='mb-2 text-4xl font-bold'>
+									Don't just take it from me, though
+								</h3>
+								<p className='text-lg'>
+									Here's what some of my past clients have to say about working
+									with me.
+								</p>
+							</div>
+							<div className='flex items-center justify-end'>
+								<TrustPilotReviewBadge />
+							</div>
+						</div>
 					</div>
 
 					<Reviews />

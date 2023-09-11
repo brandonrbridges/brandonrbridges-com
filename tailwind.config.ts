@@ -11,6 +11,11 @@ const config: Config = {
 		container: {
 			center: true,
 		},
+		extend: {
+			colors: {
+				trustpilot: '#63d793',
+			},
+		},
 	},
 	plugins: [],
 	important: true,
