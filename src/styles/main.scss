@@ -5,10 +5,7 @@
 @import './elements.scss';
 @import './typography.scss';
 
-* {
-	@apply text-zinc-900;
-}
-
-.border {
-	@apply border-zinc-900;
+body {
+	@apply text-zinc-900 overflow-x-hidden;
+	@apply dark:bg-zinc-900 dark:text-zinc-100;
 }

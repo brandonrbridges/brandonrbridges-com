@@ -1,26 +1,31 @@
+// Components
+import SocialProfiles from '@/components/SocialProfiles'
+
 const HomepageHeader = () => {
 	return (
 		<div className='py-10 md:py-28'>
 			<div className='container'>
 				<div className='md:w-4/5'>
-					<p className='font-semibold text-2xl mb-4'>Hello! I'm Brandon. 👋🏼</p>
-					<h1 className='font-bold text-6xl'>
+					<p className='mb-4 text-xl font-semibold md:text-2xl'>
+						Hello! I'm Brandon. 👋🏼
+					</p>
+					<h1 className='text-5xl font-bold md:text-6xl'>
 						Building digital products with an emphasis on{' '}
-						<span className='text-yellow-400'>visual design</span>.
+						<span className='text-transparent bg-clip-text bg-gradient-to-br from-pink-500 to-red-800'>
+							visual design
+						</span>
+						.
 					</h1>
 
-					<div className='grid grid-cols-1 md:grid-cols-2 gap-8 mt-16'>
-						<div>
-							<button className='lg'>Let's talk</button>
-						</div>
-						<div>
-							<p>
-								Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-								Suscipit pariatur, nisi dolor quam cum veniam porro velit rerum.
-								Odit deleniti doloribus reiciendis.
-							</p>
-						</div>
-					</div>
+					<p className='my-10 text-lg md:w-3/5'>
+						<span className='font-semibold'>
+							Asberger's/ASD. Designer. Developer.
+						</span>{' '}
+						I'm a self-taught designer and developer with a passion for creating
+						digital products that are accessible and inclusive.
+					</p>
+
+					<SocialProfiles />
 				</div>
 			</div>
 		</div>

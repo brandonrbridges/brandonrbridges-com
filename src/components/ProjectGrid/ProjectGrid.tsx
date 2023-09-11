@@ -5,6 +5,7 @@ import type { Project } from '@/types/project.types'
 import { Suspense } from 'react'
 
 // Next
+import Image from 'next/image'
 import Link from 'next/link'
 
 // GraphQL
@@ -13,11 +14,17 @@ import { hygraph, query } from '@/lib/graphql'
 const ProjectGrid = async () => {
 	const projects = await getProjects()
 
+	const column1 = projects.slice(0, Math.ceil(projects.length / 2))
+	const column2 = projects.slice(
+		Math.ceil(projects.length / 2),
+		projects.length
+	)
+
 	const ProjectTag = (props: { text: string }) => {
 		const text = props.text.replaceAll('_', ' ')
 
 		return (
-			<div className='border border-zinc-300 text-zinc-600 px-4 py-0.5 rounded-full text-sm'>
+			<div className='border border-zinc-300 dark:border-zinc-500 dark:text-zinc-300 text-zinc-600 px-2 py-0.5 rounded-full text-xs whitespace-nowrap'>
 				<span>{text}</span>
 			</div>
 		)
@@ -25,17 +32,28 @@ const ProjectGrid = async () => {
 
 	const Project = (props: Project) => {
 		return (
-			<Link href='/'>
+			<Link href={`/projects/${props.slug}`}>
 				<div className='group'>
-					<h6 className='font-semibold text-lg mb-1'>{props.title}</h6>
-					<p className='text-zinc-600 mb-4 md:w-4/5'>{props.description}</p>
-					<div className='flex items-center space-x-4'>
+					<h6 className='mb-1 text-lg font-semibold'>{props.title}</h6>
+					<p className='mb-4 text-zinc-600 dark:text-zinc-500 md:w-4/5'>
+						{props.description}
+					</p>
+					<div className='flex items-center space-x-2'>
 						{props.tags.map((tag) => (
 							<ProjectTag text={tag} />
 						))}
 					</div>
 
-					<div className='h-64 bg-zinc-100 rounded-lg mt-6 transition-transform group-hover:scale-105'></div>
+					<div className='relative h-64 mt-6 overflow-hidden transition-transform rounded-lg bg-zinc-100 dark:bg-zinc-800 group-hover:scale-105'>
+						{props.mainImage && (
+							<Image
+								src={props.mainImage.url}
+								alt={props.title}
+								fill
+								className='z-10 object-cover object-top'
+							/>
+						)}
+					</div>
 				</div>
 			</Link>
 		)
@@ -44,10 +62,17 @@ const ProjectGrid = async () => {
 	return (
 		<Suspense fallback={<p>Loading..</p>}>
 			<div>
-				<div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
-					{projects.map((project) => (
-						<Project {...project} />
-					))}
+				<div className='grid grid-cols-1 gap-8 md:gap-16 md:grid-cols-2'>
+					<div className='flex flex-col gap-8'>
+						{column1.map((project) => (
+							<Project {...project} />
+						))}
+					</div>
+					<div className='flex flex-col gap-8'>
+						{column2.map((project) => (
+							<Project {...project} />
+						))}
+					</div>
 				</div>
 			</div>
 		</Suspense>
@@ -62,6 +87,9 @@ const getProjects = async () => {
 				slug
 				description
 				tags
+				mainImage {
+					url
+				}
 			}
 		}
 	`

@@ -3,4 +3,7 @@ export type Project = {
 	slug: string
 	description: string
 	tags: string[]
+	mainImage?: {
+		url: string
+	}
 }

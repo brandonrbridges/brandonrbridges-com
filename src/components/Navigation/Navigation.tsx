@@ -4,6 +4,7 @@ import Link from 'next/link'
 
 // Assets
 import Logo from '@/assets/brand/Logo_Text_Dark.svg'
+import ThemeToggle from '../ThemeToggle'
 
 const Navigation = () => {
 	return (
@@ -14,11 +15,12 @@ const Navigation = () => {
 						<Image
 							src={Logo}
 							alt='brandonrbridges.com logo'
-							className='h-10 w-20'
+							className='w-20 h-10'
 						/>
 					</Link>
-					<div>
-						<button>Let's talk</button>
+					<div className='flex items-center space-x-4'>
+						<ThemeToggle />
+						<button className='button'>Let's talk</button>
 					</div>
 				</div>
 			</div>

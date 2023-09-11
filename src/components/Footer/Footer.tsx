@@ -3,7 +3,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 // Assets
-import Logo from '@/assets/brand/Logo_Square.svg'
+import Logo from '@/assets/brand/Logo_Square_Rounded.svg'
+
+// Icons
 import { IconCode, IconMapPin } from '@tabler/icons-react'
 
 const Footer = () => {
@@ -28,36 +30,63 @@ const Footer = () => {
 
 	return (
 		<div>
-			<div className='bg-zinc-900 py-20'>
+			<div className='py-20 bg-zinc-900'>
 				<div className='container'>
-					<h2 className='font-semibold text-white text-4xl'>
-						Let's work together.
-					</h2>
+					<div className='grid grid-cols-1 gap-8 md:grid-cols-2'>
+						<div className='flex flex-col justify-center'>
+							<h2 className='mb-2 text-4xl font-semibold text-white'>
+								Let's work together.
+							</h2>
+							<p className='text-zinc-400'>
+								Simply enter your email. I'll do the rest.
+							</p>
+						</div>
+						<div className='flex flex-col justify-center'>
+							<form className='flex p-1.5 pl-4 bg-white rounded'>
+								<input
+									type='text'
+									placeholder='Enter your email address'
+									className='w-full bg-transparent focus:outline-none'
+								/>
+
+								<button
+									type='submit'
+									className='px-4 py-1 text-white rounded bg-zinc-900 shrink-0'
+								>
+									Let's begin
+								</button>
+							</form>
+						</div>
+					</div>
 				</div>
 			</div>
 			<div className='container py-20'>
-				<div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
-					<div className='space-y-4'>
-						<Image
-							src={Logo}
-							alt='brandonrbridges.com logo'
-							className='h-20 w-20'
-						/>
+				<div className='grid grid-cols-1 gap-8 md:grid-cols-2'>
+					<div>
+						<Link href='/'>
+							<Image
+								src={Logo}
+								alt='brandonrbridges.com logo'
+								className='w-20 h-20'
+							/>
+						</Link>
 
-						<p className='text-sm flex items-center'>
-							<IconCode stroke={1.25} className='mr-2' />
-							Designed and developed by Brandon Bridges.
-						</p>
-						<p className='text-sm flex items-center'>
-							<IconMapPin stroke={1.25} className='mr-2' />
-							Based in Loughborough, United Kingdom.
-						</p>
+						<div className='my-4 space-y-2'>
+							<p className='flex items-center text-sm'>
+								<IconCode stroke={1.25} className='mr-2' />
+								Designed and developed by Brandon Bridges.
+							</p>
+							<p className='flex items-center text-sm'>
+								<IconMapPin stroke={1.25} className='mr-2' />
+								Based in Loughborough, United Kingdom.
+							</p>
+						</div>
 						<p className='text-xs text-zinc-500'>
 							&copy; {new Date().getFullYear()} All rights reserved.
 						</p>
 					</div>
 					<div>
-						<div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
+						<div className='grid grid-cols-1 gap-8 md:grid-cols-2'>
 							<div>
 								<h5 className='mb-2'>General</h5>
 								<ul>
