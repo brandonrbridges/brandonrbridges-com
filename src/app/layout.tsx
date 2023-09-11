@@ -17,6 +17,7 @@ import Navigation from '@/components/Navigation'
 
 // Providers
 import Providers from './providers'
+import Head from 'next/head'
 
 export const metadata: Metadata = {
 	title: "Brandon Bridges' Portfolio",
@@ -52,9 +53,12 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang='en'>
-			<head>
+			<Head>
 				<link rel='icon' href='/favicon.svg' sizes='any' />
-			</head>
+
+				<meta property='og:title' content='iPhone' />
+				<meta property='og:image' content='/og_1800x1600.png' />
+			</Head>
 
 			<body className={inter.className}>
 				<Providers>
