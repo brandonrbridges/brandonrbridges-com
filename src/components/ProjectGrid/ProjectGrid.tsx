@@ -34,7 +34,7 @@ const ProjectGrid = async () => {
 		return (
 			<Link href={`/projects/${props.slug}`}>
 				<div className='group'>
-					<h6 className='mb-1 text-lg font-semibold'>{props.title}</h6>
+					<p className='mb-1 text-lg font-semibold'>{props.title}</p>
 					<p className='mb-4 text-zinc-600 dark:text-zinc-500 md:w-4/5'>
 						{props.description}
 					</p>
