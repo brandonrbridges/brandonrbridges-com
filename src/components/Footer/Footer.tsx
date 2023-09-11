@@ -1,14 +1,22 @@
+// Types
+import type { Project } from '@/types/project.types'
+
 // Next
 import Image from 'next/image'
 import Link from 'next/link'
+
+// GraphQL
+import { hygraph, query } from '@/lib/graphql'
 
 // Assets
 import Logo from '@/assets/brand/Logo_Square_Rounded.svg'
 
 // Icons
-import { IconCode, IconMapPin } from '@tabler/icons-react'
+import { IconCode, IconMail, IconMapPin } from '@tabler/icons-react'
 
-const Footer = () => {
+const Footer = async () => {
+	const projects = await getProjects()
+
 	const generalLinks = [
 		{
 			name: 'Home',
@@ -80,6 +88,15 @@ const Footer = () => {
 								<IconMapPin stroke={1.25} className='mr-2' />
 								Based in Loughborough, United Kingdom.
 							</p>
+							<p className='flex items-center text-sm'>
+								<IconMail stroke={1.25} className='mr-2' />
+								<Link
+									href='mailto:hello@brandonrbridges.com'
+									className='transition-colors hover:text-pink-500'
+								>
+									hello@brandonrbridges.com
+								</Link>
+							</p>
 						</div>
 						<p className='text-xs text-zinc-500'>
 							&copy; {new Date().getFullYear()} All rights reserved.
@@ -88,7 +105,7 @@ const Footer = () => {
 					<div>
 						<div className='grid grid-cols-1 gap-8 md:grid-cols-2'>
 							<div>
-								<h5 className='mb-2'>General</h5>
+								<p className='mb-2 font-medium'>General</p>
 								<ul>
 									{generalLinks.map((link, index) => (
 										<li key={index}>
@@ -98,7 +115,16 @@ const Footer = () => {
 								</ul>
 							</div>
 							<div>
-								<h5 className='mb-2'>Projects</h5>
+								<p className='mb-2 font-medium'>Projects</p>
+								<ul>
+									{projects.map((project, index) => (
+										<li key={index}>
+											<Link href={`/projects/${project.slug}`}>
+												{project.title}
+											</Link>
+										</li>
+									))}
+								</ul>
 							</div>
 						</div>
 					</div>
@@ -106,6 +132,23 @@ const Footer = () => {
 			</div>
 		</div>
 	)
+}
+
+const getProjects = async () => {
+	const QUERY = query`
+		query GetProjects {
+			projects {
+				title
+				slug
+			}
+		}
+	`
+
+	const data = await hygraph.request(QUERY)
+
+	const { projects } = data as { projects: Project[] }
+
+	return projects
 }
 
 export default Footer

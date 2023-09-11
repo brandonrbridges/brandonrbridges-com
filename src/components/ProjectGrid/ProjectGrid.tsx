@@ -39,8 +39,8 @@ const ProjectGrid = async () => {
 						{props.description}
 					</p>
 					<div className='flex items-center space-x-2'>
-						{props.tags.map((tag) => (
-							<ProjectTag text={tag} />
+						{props.tags.map((tag, index) => (
+							<ProjectTag key={index} text={tag} />
 						))}
 					</div>
 
@@ -65,12 +65,12 @@ const ProjectGrid = async () => {
 				<div className='grid grid-cols-1 gap-8 md:gap-16 md:grid-cols-2'>
 					<div className='flex flex-col gap-8'>
 						{column1.map((project) => (
-							<Project {...project} />
+							<Project key={project.slug} {...project} />
 						))}
 					</div>
 					<div className='flex flex-col gap-8'>
 						{column2.map((project) => (
-							<Project {...project} />
+							<Project key={project.slug} {...project} />
 						))}
 					</div>
 				</div>

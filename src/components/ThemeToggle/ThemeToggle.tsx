@@ -16,7 +16,7 @@ const ThemeToggle = () => {
 	}
 
 	return (
-		<button onClick={handleThemeToggle}>
+		<button onClick={handleThemeToggle} aria-label='Theme Toggle'>
 			{currentTheme === 'dark' ? <IconMoon /> : <IconSun />}
 		</button>
 	)

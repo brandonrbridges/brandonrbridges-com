@@ -27,6 +27,8 @@ const SocialProfiles = (props: SocialProfilesProps) => {
 			<div className='flex items-center space-x-4'>
 				{socialProfiles.map((profile) => (
 					<Link
+						key={profile.name}
+						aria-label={profile.name}
 						href={profile.url}
 						target='_blank'
 						rel='noopener noreferrer'
