@@ -22,6 +22,7 @@ import {
 	IconMail,
 	IconMapPin,
 } from '@tabler/icons-react'
+import ThemeToggle from '../ThemeToggle'
 
 const Footer = async () => {
 	const projects = await getProjects()
@@ -106,6 +107,9 @@ const Footer = async () => {
 									hello@brandonrbridges.com
 								</Link>
 							</p>
+							<div className='mt-4'>
+								<ThemeToggle />
+							</div>
 						</div>
 						<p className='text-xs text-zinc-500'>
 							&copy; {new Date().getFullYear()} All rights reserved.

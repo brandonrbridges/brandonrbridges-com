@@ -1,13 +1,11 @@
 // Components
+import { CheckInForm, CheckInMessages } from '@/components/CheckIn'
 import GitHubRepos from '@/components/GitHubRepos'
 import HomepageHeader from '@/components/HomepageHeader'
 import ProjectGrid from '@/components/ProjectGrid'
 import Reviews from '@/components/Reviews'
 import TrustPilotReviewBadge from '@/components/TrustPilotReviewBadge'
 import UniqueSellingPoints from '@/components/UniqueSellingPoints'
-
-// Icons
-import { IconGridPattern } from '@tabler/icons-react'
 
 export default function Home() {
 	return (
@@ -17,7 +15,7 @@ export default function Home() {
 			<div className='container py-20'>
 				<div className='mb-8'>
 					<h2 className='mb-2 text-4xl font-bold'>Projects</h2>
-					<p className='text-lg text-zinc-500 md:w-3/5'>
+					<p className='text-lg text-zinc-500 md:w-3/5 dark:text-zinc-300'>
 						Some of the projects I've worked on in the past.
 					</p>
 				</div>
@@ -28,7 +26,7 @@ export default function Home() {
 			<div className='container py-20'>
 				<div className='mb-8'>
 					<h3 className='mb-2 text-4xl font-bold'>GitHub</h3>
-					<p className='text-lg text-zinc-500 md:w-3/5'>
+					<p className='text-lg text-zinc-500 md:w-3/5 dark:text-zinc-300'>
 						What I've been working on.
 					</p>
 				</div>
@@ -55,7 +53,7 @@ export default function Home() {
 			<div className='container py-20'>
 				<div className='mb-8'>
 					<h3 className='mb-2 text-4xl font-bold'>Experience</h3>
-					<p className='text-lg text-zinc-500 md:w-3/5'>
+					<p className='text-lg text-zinc-500 md:w-3/5 dark:text-zinc-300'>
 						Where I gained my skills and how I can help you.
 					</p>
 				</div>
@@ -69,7 +67,7 @@ export default function Home() {
 								<h3 className='mb-2 text-4xl font-bold'>
 									See what my Clients say
 								</h3>
-								<p className='text-lg text-zinc-500'>
+								<p className='text-lg text-zinc-500 dark:text-zinc-300'>
 									Here's what some of my past clients have to say about working
 									with me.
 								</p>
@@ -82,6 +80,24 @@ export default function Home() {
 
 					<Reviews />
 				</div>
+			</div>
+
+			<div className='container py-20'>
+				<div className='mb-8'>
+					<div className='grid grid-cols-1 gap-8 lg:grid-cols-2'>
+						<div>
+							<h3 className='mb-2 text-4xl font-bold'>Check in</h3>
+							<p className='text-lg text-zinc-500 dark:text-zinc-300'>
+								Drop a message and say hello! Let me know you've been here.
+							</p>
+						</div>
+						<div className='flex items-center justify-end'>
+							<CheckInForm />
+						</div>
+					</div>
+				</div>
+
+				<CheckInMessages />
 			</div>
 		</main>
 	)
