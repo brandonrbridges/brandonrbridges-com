@@ -46,7 +46,7 @@ const ProjectGrid = async () => {
 						))}
 					</div>
 
-					<div className='relative h-64 mt-6 overflow-hidden transition-all rounded-lg group-hover:shadow-xl bg-zinc-100 dark:bg-zinc-800 group-hover:scale-105'>
+					<div className='relative h-64 mt-6 overflow-hidden transition-all rounded-lg md:h-80 group-hover:shadow-xl bg-zinc-100 dark:bg-zinc-800 group-hover:scale-105'>
 						{props.thumbnailImage && (
 							<Image
 								src={props.thumbnailImage.url}
