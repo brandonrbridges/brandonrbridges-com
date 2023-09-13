@@ -12,7 +12,16 @@ import { hygraph, query } from '@/lib/graphql'
 import Logo from '@/assets/brand/Logo_Square_Rounded.svg'
 
 // Icons
-import { IconCode, IconMail, IconMapPin } from '@tabler/icons-react'
+import {
+	IconBrandNextjs,
+	IconBrandReact,
+	IconBrandVercel,
+	IconCode,
+	IconCoffee,
+	IconHeart,
+	IconMail,
+	IconMapPin,
+} from '@tabler/icons-react'
 
 const Footer = async () => {
 	const projects = await getProjects()
@@ -128,6 +137,22 @@ const Footer = async () => {
 							</div>
 						</div>
 					</div>
+				</div>
+			</div>
+			<div className='py-4 text-zinc-500'>
+				<div className='container flex items-center justify-center space-x-4 text-sm'>
+					<p className='flex items-center space-x-1'>
+						<IconBrandNextjs stroke={1.25} />
+						<span>Built with Next.</span>
+					</p>
+					<p className='flex items-center space-x-1'>
+						<IconBrandVercel stroke={1.25} />
+						<span>Deployed with Vercel.</span>
+					</p>
+					<p className='flex items-center space-x-1'>
+						<IconCoffee stroke={1.25} />
+						<span>Fuelled by coffee.</span>
+					</p>
 				</div>
 			</div>
 		</div>

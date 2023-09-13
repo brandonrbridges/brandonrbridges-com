@@ -6,4 +6,7 @@ export type Project = {
 	mainImage?: {
 		url: string
 	}
+	thumbnailImage?: {
+		url: string
+	}
 }

@@ -33,8 +33,10 @@ const ProjectGrid = async () => {
 	const Project = (props: Project) => {
 		return (
 			<Link href={`/projects/${props.slug}`}>
-				<div className='group'>
-					<p className='mb-1 text-lg font-semibold'>{props.title}</p>
+				<div className='cursor-pointer group'>
+					<p className='mb-1 text-lg font-semibold transition-colors group-hover:text-pink-500'>
+						{props.title}
+					</p>
 					<p className='mb-4 text-zinc-600 dark:text-zinc-500 md:w-4/5'>
 						{props.description}
 					</p>
@@ -44,10 +46,10 @@ const ProjectGrid = async () => {
 						))}
 					</div>
 
-					<div className='relative h-64 mt-6 overflow-hidden transition-transform rounded-lg bg-zinc-100 dark:bg-zinc-800 group-hover:scale-105'>
-						{props.mainImage && (
+					<div className='relative h-64 mt-6 overflow-hidden transition-all rounded-lg group-hover:shadow-xl bg-zinc-100 dark:bg-zinc-800 group-hover:scale-105'>
+						{props.thumbnailImage && (
 							<Image
-								src={props.mainImage.url}
+								src={props.thumbnailImage.url}
 								alt={props.title}
 								fill
 								className='z-10 object-cover object-top'
@@ -87,7 +89,7 @@ const getProjects = async () => {
 				slug
 				description
 				tags
-				mainImage {
+				thumbnailImage {
 					url
 				}
 			}
