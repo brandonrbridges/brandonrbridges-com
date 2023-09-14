@@ -1,12 +1,16 @@
 // Types
 import type { Metadata } from 'next'
 
-// Fonts
-import { Inter } from 'next/font/google'
-const inter = Inter({ subsets: ['latin'] })
+// Next
+import Head from 'next/head'
+import Script from 'next/script'
 
 // Vercel
 import { Analytics } from '@vercel/analytics/react'
+
+// Fonts
+import { Inter } from 'next/font/google'
+const inter = Inter({ subsets: ['latin'] })
 
 // Styles
 import '@/styles/main.scss'
@@ -17,7 +21,6 @@ import Navigation from '@/components/Navigation'
 
 // Providers
 import Providers from './providers'
-import Head from 'next/head'
 
 export const metadata: Metadata = {
 	title: "Brandon Bridges' Portfolio",
@@ -47,6 +50,20 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang='en'>
+			<Script
+				async
+				src='https://www.googletagmanager.com/gtag/js?id=G-3TB5HSYX8F'
+			/>
+			<Script id='google-analytics'>
+				{`
+					window.dataLayer = window.dataLayer || [];
+					function gtag(){dataLayer.push(arguments);}
+					gtag('js', new Date());
+				
+					gtag('config', 'G-3TB5HSYX8F');
+				`}
+			</Script>
+
 			<Head>
 				<link rel='icon' href='/favicon.svg' sizes='any' />
 
