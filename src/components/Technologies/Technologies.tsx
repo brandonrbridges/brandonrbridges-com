@@ -20,12 +20,15 @@ import {
 const Technologies = () => {
 	return (
 		<div>
-			<div className='mb-4'>
+			<div className='mb-4 space-y-2'>
 				<p className='font-medium'>
 					Technologies
 					<span className='ml-4 text-xs text-zinc-500'>
 						Hover for more information
 					</span>
+				</p>
+				<p className='text-xs sm:hidden text-zinc-500'>
+					On mobile? Swipe to see more technologies.
 				</p>
 			</div>
 			<div className='flex items-start justify-start py-2 space-x-4 overflow-x-scroll sm:py-0 md:overflow-x-auto scrollbar-hide'>
@@ -62,10 +65,6 @@ const Technologies = () => {
 
 				<Tooltip id='tooltip' className='-translate-x-4' place='bottom' />
 			</div>
-
-			<p className='mt-4 text-xs sm:hidden text-zinc-500'>
-				On mobile? Swipe to see more technologies.
-			</p>
 		</div>
 	)
 }
