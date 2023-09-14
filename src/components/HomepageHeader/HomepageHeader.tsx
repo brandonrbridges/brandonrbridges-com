@@ -1,6 +1,21 @@
+// Next
+import Link from 'next/link'
+
 // Components
 import SocialProfiles from '@/components/SocialProfiles'
-import Link from 'next/link'
+
+// Icons
+import {
+	IconBrandGraphql,
+	IconBrandMysql,
+	IconBrandNextjs,
+	IconBrandReact,
+	IconDatabase,
+} from '@tabler/icons-react'
+
+// Packages
+import { Tooltip } from 'react-tooltip'
+import Technologies from '../Technologies'
 
 const HomepageHeader = () => {
 	return (
@@ -18,23 +33,30 @@ const HomepageHeader = () => {
 						.
 					</h1>
 
-					<p className='my-10 text-lg md:w-3/5'>
-						<span className='font-semibold'>
-							Asberger's/ASD. Designer. Developer.
-						</span>{' '}
-						I'm a self-taught designer and developer with a passion for creating
-						digital products that are accessible and inclusive.
-					</p>
+					<div className='grid grid-cols-1 gap-8 my-10 md:grid-cols-2'>
+						<div>
+							<p className='text-lg'>
+								<span className='font-semibold'>
+									Asberger's/ASD. Designer. Developer.
+								</span>{' '}
+								I'm a self-taught designer and developer with a passion for
+								creating digital products that are accessible and inclusive.
+							</p>
 
-					<SocialProfiles className='my-10' />
+							<SocialProfiles className='my-10' />
 
-					<p>
-						Say{' '}
-						<Link href='mailto:hello@brandonrbridges.com'>
-							<span className='font-semibold text-pink-500'>hello</span>
-							@brandonrbridges.com
-						</Link>
-					</p>
+							<p>
+								Say{' '}
+								<Link href='mailto:hello@brandonrbridges.com'>
+									<span className='font-semibold text-pink-500'>hello</span>
+									@brandonrbridges.com
+								</Link>
+							</p>
+						</div>
+						<div>
+							<Technologies />
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
