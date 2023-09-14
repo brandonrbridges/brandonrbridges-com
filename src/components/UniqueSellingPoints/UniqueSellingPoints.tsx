@@ -57,7 +57,7 @@ const UniqueSellingPoints = () => {
 	const Item = (props: USP) => {
 		return (
 			<div className='p-4 border rounded-lg border-zinc-700 text-zinc-100'>
-				<div className='flex items-center space-x-2'>
+				<div className='flex flex-col space-y-2 md:items-center md:space-x-2 md:space-y-0 md:flex-row'>
 					<span>{props.icon}</span>
 					<p>{props.title}</p>
 				</div>
