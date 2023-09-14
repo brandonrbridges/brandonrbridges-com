@@ -8,8 +8,9 @@ import Link from 'next/link'
 // GraphQL
 import { hygraph, query } from '@/lib/graphql'
 
-// Assets
-import Logo from '@/assets/brand/Logo_Square_Rounded.svg'
+// Components
+import Logo from '../Logo'
+import ThemeToggle from '../ThemeToggle'
 
 // Icons
 import {
@@ -22,7 +23,6 @@ import {
 	IconMail,
 	IconMapPin,
 } from '@tabler/icons-react'
-import ThemeToggle from '../ThemeToggle'
 
 const Footer = async () => {
 	const projects = await getProjects()
@@ -81,13 +81,7 @@ const Footer = async () => {
 			<div className='container py-20'>
 				<div className='grid grid-cols-1 gap-8 md:grid-cols-2'>
 					<div>
-						<Link href='/'>
-							<Image
-								src={Logo}
-								alt='brandonrbridges.com logo'
-								className='w-20 h-20'
-							/>
-						</Link>
+						<Logo />
 
 						<div className='my-4 space-y-2'>
 							<p className='flex items-center text-sm'>

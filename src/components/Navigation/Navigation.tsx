@@ -1,9 +1,10 @@
 // Next
-import Image from 'next/image'
 import Link from 'next/link'
 
+// Components
+import Logo from '../Logo'
+
 // Assets
-import Logo from '@/assets/brand/Logo_Text_Dark.svg'
 import ThemeToggle from '../ThemeToggle'
 
 const Navigation = () => {
@@ -11,13 +12,7 @@ const Navigation = () => {
 		<div className='py-2'>
 			<div className='container'>
 				<div className='flex items-center justify-between'>
-					<Link href='/'>
-						<Image
-							src={Logo}
-							alt='brandonrbridges.com logo'
-							className='w-20 h-10'
-						/>
-					</Link>
+					<Logo />
 					<div className='flex items-center space-x-4'>
 						<ThemeToggle />
 						<button className='button'>Let's talk</button>

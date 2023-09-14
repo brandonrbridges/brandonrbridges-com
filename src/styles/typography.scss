@@ -5,3 +5,33 @@
 h5 {
 	@apply font-semibold;
 }
+
+.markdown {
+	h2 {
+		@apply text-2xl font-medium mb-4 border-l-2 border-zinc-300 dark:border-zinc-700 pl-4;
+	}
+
+	h3 {
+		@apply text-xl font-medium mb-4 border-l-2 border-zinc-300 dark:border-zinc-700 pl-4;
+
+		&:not(:first-child) {
+			@apply mt-8;
+		}
+	}
+
+	p {
+		@apply mb-2;
+
+		&:last-child {
+			@apply mb-0;
+		}
+	}
+
+	ul {
+		@apply list-disc list-inside mb-2 space-y-2;
+
+		&:last-child {
+			@apply mb-0;
+		}
+	}
+}

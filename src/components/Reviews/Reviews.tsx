@@ -31,11 +31,23 @@ const reviews = [
 const Reviews = () => {
 	return (
 		<div>
-			<Swiper slidesPerView={2} spaceBetween={50}>
+			<Swiper
+				spaceBetween={50}
+				breakpoints={{
+					320: {
+						// sm
+						slidesPerView: 1,
+					},
+					768: {
+						// md
+						slidesPerView: 2,
+					},
+				}}
+			>
 				{reviews.map((review, index) => (
 					<SwiperSlide
 						key={index}
-						className='p-4 space-y-4 border rounded-lg border-zinc-300 dark:text-zinc-100 dark:border-zinc-700'
+						className='p-4 space-y-4 bg-white border rounded-lg dark:bg-transparent border-zinc-300 dark:text-zinc-100 dark:border-zinc-600'
 					>
 						<p className='font-semibold'>{review.title}</p>
 						<div className='flex items-center space-x-1'>

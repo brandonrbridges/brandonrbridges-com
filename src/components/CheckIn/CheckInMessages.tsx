@@ -7,6 +7,7 @@ import relativeTime from 'dayjs/plugin/relativeTime'
 dayjs.extend(relativeTime)
 
 interface CheckInMessage {
+	id: string
 	name: string
 	message: string
 	date: string
@@ -20,11 +21,11 @@ const CheckInMessages = async () => {
 	}
 
 	return (
-		<div className='grid grid-cols-2 gap-8 md:grid-cols-4'>
-			{messages?.map(({ name, message, date }, index) => (
-				<div className='space-y-2'>
-					<div className='flex items-center justify-between '>
-						<p>{name} said:</p>
+		<div className='grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
+			{messages?.map(({ id, name, message, date }) => (
+				<div key={id} className='space-y-2'>
+					<div className='flex items-center justify-between'>
+						<p>{name} says</p>
 						<p className='text-xs text-zinc-400 dark:text-zinc-500'>
 							{dayjs(date).fromNow()}
 						</p>
@@ -41,6 +42,7 @@ async function getCheckInMessages(): Promise<CheckInMessage[]> {
 	const QUERY = query`
 		query {
 			checkInMessages(orderBy: date_DESC) {
+				id
 				name
 				message
 				date

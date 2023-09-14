@@ -12,7 +12,7 @@ const TrustPilotReviewBadge = () => {
 			target='_blank'
 			rel='noopener noreferrer'
 		>
-			<button className='flex items-center px-4 py-2 space-x-2 transition-colors border border-trustpilot hover:bg-trustpilot hover:text-white'>
+			<button className='flex items-center w-full px-4 py-2 space-x-2 transition-colors border md:w-fit border-trustpilot hover:bg-trustpilot hover:text-white'>
 				<Image src={TrustPilotStar} alt='TrustPilot' height={30} width={30} />
 				<span>Review me on TrustPilot</span>
 			</button>
