@@ -6,6 +6,10 @@
 @import './helpers.scss';
 @import './typography.scss';
 
+html {
+	@apply overflow-x-hidden;
+}
+
 body {
 	@apply text-zinc-900 overflow-x-hidden;
 	@apply dark:bg-zinc-900 dark:text-zinc-100;
