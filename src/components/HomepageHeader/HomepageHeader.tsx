@@ -37,7 +37,7 @@ const HomepageHeader = () => {
 						<div>
 							<p className='text-lg'>
 								<span className='font-semibold'>
-									Asberger's/ASD. Designer. Developer.
+									Designer. Developer. Nerd.
 								</span>{' '}
 								I'm a self-taught designer and developer with a passion for
 								creating digital products that are accessible and inclusive.
