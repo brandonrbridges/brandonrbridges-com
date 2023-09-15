@@ -1,5 +1,6 @@
 // Components
 import { CheckInForm, CheckInMessages } from '@/components/CheckIn'
+import Experiences from '@/components/Experiences'
 import GitHubRepos from '@/components/GitHubRepos'
 import HomepageHeader from '@/components/HomepageHeader'
 import ProjectGrid from '@/components/ProjectGrid'
@@ -57,6 +58,8 @@ export default function Home() {
 						Where I gained my skills and how I can help you.
 					</p>
 				</div>
+
+				<Experiences />
 			</div>
 
 			<div className='py-20 bg-zinc-100 dark:bg-zinc-800'>
