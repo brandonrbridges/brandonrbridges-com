@@ -1,5 +1,8 @@
 'use client'
 
+// React
+import { useEffect, useState } from 'react'
+
 // Next
 import Image from 'next/image'
 import Link from 'next/link'
@@ -12,7 +15,13 @@ import LogoDark from '@/assets/brand/Logo_Text_Dark.svg'
 import { useTheme } from 'next-themes'
 
 const Logo = () => {
+	const [mounted, setMounted] = useState(false)
+
 	const { theme } = useTheme()
+
+	useEffect(() => setMounted(true), [])
+
+	if (!mounted) return null
 
 	if (theme === 'light') {
 		return (
