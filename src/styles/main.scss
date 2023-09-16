@@ -14,3 +14,7 @@ body {
 	@apply text-zinc-900 overflow-x-hidden;
 	@apply dark:bg-zinc-900 dark:text-zinc-100;
 }
+
+.container {
+	@apply px-4;
+}
